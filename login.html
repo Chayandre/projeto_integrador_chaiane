@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Tela de Login</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <img src="imagens/l2.png" alt="Logo" class="login-logo">
+            <form class="formLogin" action="index.html" method="get">
+                <div class="formGroup">
+                    <label for="email">E-mail:</label>  
+                    <input id="email" name="email" type="text" placeholder="E-mail" required>
+                </div>
+                <div class="formGroup">
+                    <label for="senha">Senha:</label>
+                    <input id="senha" name="senha" type="password" placeholder="Senha" required>
+                </div>
+                <div class="formGroup">
+                    <button type="submit">Entrar</button>
+                </div>
+                <div class="links">
+                    <p class="text"><a href="cadastro.html">Criar conta</a></p>
+                </div>
+            </form>
+        </div>
+        <script defer>
+            let users = [];
+
+            async function loadUsers() {
+                try {
+                    const response = await fetch('http://localhost:8080/clientes');
+                    if (response.ok) {
+                        users = await response.json();
+                        console.log('Usuários carregados:', users);
+                    } else {
+                        alert('Erro ao carregar usuários');
+                    }
+                } catch (error) {
+                    console.error('Erro:', error);
+                    alert('Erro ao conectar com o servidor');
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                loadUsers();
+
+                const formLogin = document.querySelector('.formLogin');
+                
+                if (formLogin) {
+                    formLogin.addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        const email = document.getElementById('email').value;
+                        const password = document.getElementById('senha').value;
+                        
+                        const user = users.find(u => u.email === email && u.senha === password);
+
+                        if (user) {
+                            alert('Login realizado com sucesso!');
+                            localStorage.setItem("userId", user.id);
+                            window.location.href = 'index.html';
+                        } else {
+                            alert('E-mail ou senha incorretos!');
+                        }
+                    });
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

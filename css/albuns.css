@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f9f0f6, #fff4f9);
+    padding: 20px;
+}
+
+header {
+    background: #fce4ec;
+    color: #d81b60;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #f8bbd0;
+    border-radius: 0 0 20px 20px;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo img {
+    max-height: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #d81b60;
+    margin-bottom: 1rem;
+}
+
+.albuns-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.album {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f8bbd0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.album:hover {
+    transform: scale(1.05);
+}
+
+.album h2, .album p, .album .preço, .album button {
+    margin: 0 10px;
+}
+
+.album button {
+    background-color: #ff4081;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.album button:hover {
+    background-color: #e91e63;
+    transform: translateY(-2px);
+}
+
+footer {
+    background: #fce4ec;
+    color: #d81b60;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 20px 20px 0 0;
+    margin-top: 2rem;
+}

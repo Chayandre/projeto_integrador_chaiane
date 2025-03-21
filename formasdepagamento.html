@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="css/formaspagamento.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Finalizar Compra</h1>
+        </div>
+    </header>
+    
+    <main>
+        <section class="pagamento">
+            <h2>Resumo da Compra</h2>
+            <div id="resumo-compra">
+                <p><strong>Nome do Cliente:</strong> <span id="cliente-nome"></span></p>
+                <p><strong>Produto:</strong> <span id="produto-nome"></span></p>
+                <p><strong>Preço:</strong> <span id="produto-preco"></span></p>
+            </div>
+
+            <h2>Forma de Pagamento</h2>
+            <select id="forma-pagamento" name="forma-pagamento" required>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="pix">PIX</option>
+            </select>
+            
+            <div id="cartao-info" class="pagamento-info">
+                <label for="numero-cartao">Número do Cartão:</label>
+                <input type="text" id="numero-cartao" name="numero-cartao">
+                
+                <label for="validade">Validade:</label>
+                <input type="text" id="validade" name="validade" placeholder="MM/AA">
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3">
+            </div>
+            
+            <button id="confirmar-pagamento">Confirmar Pagamento</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 HIILIO. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            carregarResumo();
+            document.getElementById("confirmar-pagamento").addEventListener("click", registrarPagamento);
+        });
+
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                clienteId: localStorage.getItem("userId"),
+                clienteNome: params.get("clienteNome"),
+                produto: params.get("produto"),
+                preco: params.get("preco")
+            };
+        }
+
+        function carregarResumo() {
+            const params = getQueryParams();
+            document.getElementById("cliente-nome").textContent = params.clienteNome || "Não disponível";
+            document.getElementById("produto-nome").textContent = params.produto || "Não informado";
+            document.getElementById("produto-preco").textContent = `R$ ${params.preco}` || "Não informado";
+        }
+
+        async function registrarPagamento() {
+            const params = getQueryParams();
+            const formaPagamento = document.getElementById("forma-pagamento").value;
+
+            const pagamento = {
+                clienteId: params.clienteId,
+                produto: params.produto,
+                preco: parseFloat(params.preco),
+                formaPagamento: formaPagamento
+            };
+
+            try {
+                const response = await fetch("http://localhost:8080/pagamentos", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(pagamento)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Erro ao processar pagamento.");
+                }
+
+                alert("Pagamento confirmado com sucesso!");
+                window.location.href = "ultimascompras.html"; 
+            } catch (error) {
+                console.error("Erro ao registrar pagamento:", error);
+                alert("Erro ao registrar o pagamento. Tente novamente.");
+            }
+        }
+    </script>
+</body>
+</html>

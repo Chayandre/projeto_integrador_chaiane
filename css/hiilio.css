@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f9f0f6, #fff4f9); 
+}
+
+header {
+    background: #fce4ec;
+    color: #d81b60;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #f8bbd0;
+    border-radius: 0 0 20px 20px;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: inline-block;
+}
+
+header .logo img {
+    max-height: 80px;
+    width: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+main {
+    max-width: 960px; 
+    margin: 2rem auto; 
+    padding: 2rem 1.5rem; 
+    background: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.hillio {
+    background: #ffffff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #f8bbd0;
+}
+
+.hillio h2 {
+    font-size: 2.2rem;
+    color: #d81b60;
+    margin-bottom: 1.25rem; 
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hillio p {
+    font-size: 1.1rem; 
+    margin-bottom: 1.5rem;
+}
+
+.hillio h3 {
+    font-size: 1.6rem; 
+    color: #d81b60;
+    margin: 1rem 0; 
+}
+
+.hillio ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.hillio ul li {
+    font-size: 1.1rem; 
+    margin-bottom: 1rem;
+}
+
+footer {
+    background: #fce4ec;
+    color: #d81b60;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}

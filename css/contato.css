@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f9f0f6, #fff4f9); 
+}
+
+.contato {
+    background: #ffffff; 
+    color: #333; 
+    padding: 2rem;
+    border-radius: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #f8bbd0; 
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+
+}
+
+.contato::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 0;
+}
+
+.contato h2 {
+    color: #d81b60; 
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem; 
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    z-index: 1; 
+}
+
+.contato p {
+    color: #666; 
+    margin-bottom: 2rem;
+    font-size: 1.2rem; 
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.contato-info {
+    margin-bottom: 2rem;
+    font-size: 1.2rem; 
+    color: #333;
+}
+
+.contato-info p {
+    margin: 0.5rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+form label {
+    color: #d81b60; 
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+form input, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #f8bbd0; 
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #d81b60; 
+    outline: none;
+    box-shadow: 0 0 8px rgba(216, 27, 96, 0.2); 
+}
+
+button {
+    background: linear-gradient(135deg, #f06292, #d81b60); 
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #d81b60, #f06292); 
+    transform: scale(1.05);
+}
+
+button::after {
+    content: '💌';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+}
+
+footer {
+    background: #fce4ec; 
+    color: #d81b60; 
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 20px 20px 0 0; 
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem; 
+}

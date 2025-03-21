@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <link rel="stylesheet" href="css/suporte.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Logo">
+                <img src="imagens/l2.png" alt="Logo">
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="suporte">
+            <div class="container">
+                <h1>Suporte</h1>
+                <p>Estamos aqui para ajudar! Se você tiver qualquer dúvida ou precisar de assistência com nossos produtos ou serviços, entre em contato conosco através das opções abaixo.</p>
+
+                <h2>Contate Nosso Suporte</h2>
+                <p>Para qualquer questão ou problema, nossa equipe está disponível para ajudá-lo. Escolha o método que melhor se adequa a você:</p>
+                <ul>
+                    <li><strong>E-mail:</strong> hillio@gmail.com</li>
+                    <li><strong>Telefone:</strong> (75) 8954-2125</li>
+                    <li><strong>Loja Física:</strong> Rua dos Sonhos, 554, Encantamentos, Luar Brilhante - Bahia, das 9h às 18h, de segunda a sexta-feira.</li>
+                </ul>
+
+                <h2>Problemas Comuns</h2>
+                <ul>
+                    <li><a href="#devolucao">Devolução de Produtos</a></li>
+                    <li><a href="#trocas">Trocas de Produtos</a></li>
+                    <li><a href="#entregas">Questões de Entrega</a></li>
+                </ul>
+
+                <h2 id="devolucao">Devolução de Produtos</h2>
+                <p>Se você precisar devolver um item, siga as instruções abaixo:</p>
+                <ol>
+                    <li><strong>Solicite a Devolução:</strong> Entre em contato com nosso suporte para iniciar o processo de devolução. Informe seu número de pedido e o motivo da devolução.</li>
+                    <li><strong>Prepare o Pacote:</strong> Embale o item com cuidado em sua embalagem original. Certifique-se de incluir todos os acessórios e manuais.</li>
+                    <li><strong>Envie o Item:</strong> Envie o pacote para o endereço fornecido por nosso suporte. A devolução deve ser realizada dentro do prazo de 30 dias a partir da data de recebimento.</li>
+                    <li><strong>Receba o Reembolso:</strong> Após a chegada do item em nosso depósito, processaremos o reembolso no prazo de 7 a 10 dias úteis.</li>
+                </ol>
+
+                <h2 id="trocas">Trocas de Produtos</h2>
+                <p>Se você deseja trocar um item, o processo é simples:</p>
+                <ol>
+                    <li><strong>Solicite a Troca:</strong> Contate nosso suporte e informe o motivo da troca e o item que deseja receber em substituição.</li>
+                    <li><strong>Envie o Item:</strong> Envie o produto para o endereço indicado por nossa equipe. O item deve estar em perfeitas condições e na embalagem original.</li>
+                    <li><strong>Receba o Novo Item:</strong> Após o recebimento do item devolvido, enviaremos o novo produto sem custo adicional.</li>
+                </ol>
+
+                <h2 id="entregas">Questões de Entrega</h2>
+                <p>Se você está enfrentando problemas com a entrega, entre em contato com nosso suporte para rastreamento e resolução de qualquer problema.</p>
+
+                <h2>Formulário de Suporte</h2>
+                <p>Preencha o formulário abaixo para relatar problemas ou solicitar devoluções.</p>
+                <form action="/enviar-suporte" method="post">
+                    <fieldset>
+                        <legend>Informações de Contato</legend>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tipo de Solicitação</legend>
+                        <label for="tipo-solicitacao">Selecione o tipo de solicitação:</label>
+                        <select id="tipo-solicitacao" name="tipo_solicitacao" required>
+                            <option value="devolucao">Devolução</option>
+                            <option value="problema-compra">Problema com a Compra</option>
+                            <option value="problema-site">Problema com o Site</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Detalhes</legend>
+                        <label for="descricao">Descrição do Problema ou Solicitação:</label>
+                        <textarea id="descricao" name="descricao" rows="6" required></textarea>
+                    </fieldset>
+
+                    <button type="submit">Enviar Solicitação</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hiilio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

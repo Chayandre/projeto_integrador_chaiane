@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Álbuns</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="hiilio.html" class="logo" aria-label="Logo">
+                <img src="imagens/l2.png" alt="Logo">
+            </a>
+            <div class="header-icons">
+                <form action="#" class="search-form" aria-label="Pesquisar Álbuns">
+                    <input type="text" class="search-input" placeholder="Buscar álbuns..." aria-label="Buscar álbuns">
+                    <button type="button" class="search-button" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <a href="perfil.html" class="profile-icon" aria-label="Perfil do usuário">👤</a>
+                
+                <div class="dropdown">
+                    <button class="seta-button">➡</button>
+                    <div class="dropdown-content">
+                        <div class="sub-dropdown">
+                            <a href="#" class="sub-dropdown-btn">Fale Conosco ▾</a>
+                            <div class="sub-dropdown-content">
+                                <a href="contato.html">Contato</a>
+                                <a href="suporte.html">Suporte</a>
+                           
+                              
+                            </div>
+                        </div>
+                        <a href="Produtos.html">Nossos Produtos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Álbuns em Destaque</h2>
+            <div class="album-grid">
+                <article class="album">
+                    <a href="dangerous-woman.html">
+                        <img src="imagens/Dangerous Woman.jpg" alt="Capa do álbum Dangerous Woman">
+                        <h3>Dangerous Woman</h3>
+                    </a>
+                </article>
+                <article class="album">
+                    <a href="the-chaos-chapter-freeze.html">
+                        <img src="imagens/freeze.jpg" alt="Capa do álbum The Chaos Chapter: Freeze">
+                        <h3>The Chaos Chapter: Freeze</h3>
+                    </a>
+                </article>
+                <article class="album">
+                    <a href="hot-pink.html">
+                        <img src="imagens/hot pink.jpg" alt="Capa do álbum Hot Pink">
+                        <h3>Hot Pink</h3>
+                    </a>
+                </article>
+                <article class="album">
+                    <a href="wings.html">
+                        <img src="albuns/wings.jpg" alt="Capa do álbum Wings">
+                        <h3>WINGS</h3>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <footer>
+        <p>&copy; 2025 HIILIO. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html>
